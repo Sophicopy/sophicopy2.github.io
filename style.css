@@ -5,7 +5,7 @@ Copyright (c) 2022 Copyright Holder. All rights reserved.
 """
 
 import sys
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lato:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
@@ -14,8 +14,8 @@ import unittest
 
 :root{
 	--font: Lato, serif;
-	--fontf: Poppins-a;
-	--fontw: Poppins-g;
+	--fontf: Poppins;
+	--fontw: Poppins;
 }
 /*  */
 
