@@ -21,7 +21,7 @@ import unittest
 
 @font-face{
   font-family: Poppins;
-  src: url('Fonts/poppins/Poppins-Regular.ttf');
+  src: url('Fonts/poppins/Poppins-Regular.otf');
   
   }
    
