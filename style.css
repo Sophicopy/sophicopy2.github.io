@@ -27,7 +27,7 @@ import unittest
    
   @font-face{
   font-family: Montserrat;
-  src: url('Fonts/Montserrat/Montserrat-Bold.ttf');
+  src: url('Fonts/Montserrat-Bold.ttf');
   
   }
 
@@ -35,7 +35,7 @@ import unittest
  *{
  	padding:0;
  	margin: 0;
- 	font-family: 'Poppins', Poppins, 'Montserrat', Helvetica;
+ 	font-family: 'Poppins', Poppins, 'Montserrat', Montserrat, Helvetica;
  	box-sizing: border-box;
  	font-size: 20px;
  	color: black;
