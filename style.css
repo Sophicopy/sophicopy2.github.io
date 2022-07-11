@@ -5,29 +5,28 @@ Copyright (c) 2022 Copyright Holder. All rights reserved.
 """
 
 import sys
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
 
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
 
 import unittest
 
 :root{
 	--font: Lato, serif;
-	--fontf: Poppins;
-	--fontw: Poppins;
+	--fontf: Poppins-a;
+	--fontw: Poppins-g;
 }
 /*  */
 
 @font-face{
   font-family: Poppins;
-  src: url('Fonts/poppins/Poppins-Regular.otf');
+  src: url('Fonts/poppins/Poppins-Regular.ttf');
   
   }
    
   @font-face{
   font-family: Montserrat;
-  src: url('Fonts/Montserrat-Bold.ttf');
+  src: url('Montserrat-ExtraBold.ttf');
   
   }
 
@@ -35,12 +34,10 @@ import unittest
  *{
  	padding:0;
  	margin: 0;
- 	font-family: 'Poppins', Poppins, 'Montserrat', Montserrat, Helvetica;
+ 	font-family: Poppins, Montserrat, Helvetica;
  	box-sizing: border-box;
  	font-size: 20px;
  	color: black;
- 
-
  	
  }
  
@@ -380,7 +377,20 @@ li{
 	}
 	
 	@media (max-width: 600px){
-		
+
+   .title{
+		margin-top: 10px;
+	  font-size: 28px;
+	}
+	
+	.section-1 .title{
+		font-size: 25px;
+	}
+	
+	.section-1 .intro{
+		font-size: 18px;
+		margin: 5px 0;
+	}		
 		.section-4 .picture{
  	width: 300px;
  	height: 400px;
@@ -393,4 +403,4 @@ li{
  	height: 250px;
 }	
 
-	} 
+	}
