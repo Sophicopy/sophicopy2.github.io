@@ -1,5 +1,7 @@
 
 
+
+
 Created by Sophia Oladapo on 4/24/22.
 Copyright (c) 2022 Copyright Holder. All rights reserved.
 """
@@ -20,13 +22,37 @@ import unittest
 
 @font-face{
   font-family: Poppins;
-  src: url('Fonts/poppins/Poppins-Regular.otf');
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.ttf');
   
   }
    
   @font-face{
   font-family: Montserrat;
-  src: url('Montserrat-ExtraBold.ttf');
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
   
   }
 
@@ -34,10 +60,12 @@ import unittest
  *{
  	padding:0;
  	margin: 0;
- 	font-family: Poppins, Montserrat, Helvetica;
+ 	font-family: Poppins, Montserrat, 'Montserrat', Helvetica;
  	box-sizing: border-box;
  	font-size: 20px;
  	color: black;
+ 
+
  	
  }
  
@@ -75,8 +103,7 @@ import unittest
  
   .section-1 .title{
  	
- 	font-weight: 600;
- 	font-family:  Montserrat;
+ 	font-family: Montserrat, 'Montserrat', Helvetica;
  	text-align: center;
  	font-size: 35px;
  	color: red;
@@ -85,8 +112,7 @@ import unittest
  }
  
  .title{
-  font-family: Montserrat;
- 	font-weight: 500;
+  font-family: Montserrat, 'Montserrat', Helvetica;
  	text-align: center;
  	font-size: 30px;
  	color: red;
@@ -104,11 +130,13 @@ import unittest
  	display: inline-block;
  	margin: 15px 0;
  	font-weight: 500;
+ 	font-family: Montserrat-b;
  	font-size: 25px;
  	padding: 20px;
  	color: white;
  	text-decoration: none;
  	background: black;
+ 	border-radius: 10px;
  }
  
  
@@ -167,8 +195,7 @@ import unittest
  }
  
  .section-4 .picture{
- 	width: 900px;
- 	height: 500px;
+ 	width: 800px;
   border: 2px solid black;
   margin-top: 20px; 
  }
@@ -182,15 +209,16 @@ import unittest
 
 .word{
 	font-size: 25px;
-	font-family: Montserrat;
+	font-family: Montserrat, 'Montserrat', Helvetica;
 } 
+
 .list{
    width: 50%;	
 }
 
 li{
   margin: 5px 0;
-  font-family: Montserrat;
+  font-family: Montserrat-b, 'Montserrat', Helvetica;
   padding: 10px;      	
 }
 
@@ -236,7 +264,7 @@ li{
 	color: white;
 	display: block;
 	font-weight: 500;
-	font-family: Montserrat;
+	font-family: Montserrat-b, 'Montserrat', Helvetica;
 	font-size: 23px;
 	cursor: pointer;
 	position: relative;
@@ -328,8 +356,7 @@ footer i{
 	}
 	
 	.activ{
-		font-size: 20px;
-		font-family: Poppins;
+		font-size: 18px;
 	}
 	
 	.section-3{
@@ -337,6 +364,7 @@ footer i{
 		flex-direction: column;
 		padding: 20px 0;
 	}
+
 	.section-3 .title, .section-4 .title, .section-55 .title{
 		font-size: 25px;
 		padding: 10px;
@@ -346,7 +374,6 @@ footer i{
 	
 	.section-4 .picture{
  	width: 500px;
- 	height: 400px;
   border: 2px solid black;
   
  }
@@ -376,31 +403,37 @@ li{
 
 	}
 	
-	@media (max-width: 600px){
+	@media (max-width: 500px){
 
    .title{
 		margin-top: 10px;
-	  font-size: 28px;
+	 font-size: 28px;
+	 font-family: Montserrat, 'Montserrat', Helvetica;
 	}
 	
 	.section-1 .title{
 		font-size: 25px;
+		font-family: Montserrat, 'Montserrat', Helvetica;
 	}
 	
 	.section-1 .intro{
 		font-size: 18px;
 		margin: 5px 0;
 	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
 		.section-4 .picture{
  	width: 300px;
- 	height: 400px;
   border: 2px solid black;
   
  }
 
 .pic{
 	width: 250px;
- 	height: 250px;
+ 	
 }	
 
-	}
+	} 
