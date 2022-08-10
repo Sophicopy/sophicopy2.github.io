@@ -16,9 +16,15 @@ import sys
 import unittest
 
 :root{
-	--font: Lato, serif;
-	--fontf: Poppins-a;
-	--fontw: Poppins-g;
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
 }
 /*  */
 
@@ -27,10 +33,24 @@ import unittest
   src: url('../Fonts/Poppins/Poppins-Regular.ttf');
   
   }
+  
    
    @font-face{
   font-family: Poppins;
   src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
   
   }
    
@@ -62,7 +82,7 @@ import unittest
  *{
  	padding:0;
  	margin: 0;
- 	font-family: Poppins, Helvetica;
+ 	font-family: var(--font);
  	box-sizing: border-box;
  	font-size: 20px;
  	color: black;
@@ -76,48 +96,49 @@ import unittest
  }
  
  .pic{
-  width: 500px;
+  width: 600px;
  	border: 2px solid black;
  }
  
- .image{
- 	border: 2px solid black;
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
  }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
  .section-1{
  
   width: 100%;
  	color: black;
  	padding: 10px 0;
-  margin-top: 25px; 	
- 	margin-bottom: 30px;
- }
- 
- 
- .section-1 .max-width{
- 
- 	width: 100%;
  	display: flex;
  	flex-direction: column;
  	align-items: center;
- 	justify-content: center;
- 	
  }
  
-  .section-1 .title{
- 	
- 	font-family: Montserrat, 'Montserrat', Helvetica;
- 	text-align: center;
- 	font-size: 35px;
- 	color: red;
- 	width: 90%;
- 	margin-top: 10px;
- }
+
+
  
  .title{
-  font-family: Montserrat, 'Montserrat', Helvetica;
+  font-family: var(--fontf);
  	text-align: center;
  	font-size: 30px;
  	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
  }
  
  .intro{
@@ -141,66 +162,30 @@ import unittest
  	border-radius: 10px;
  }
  
- 
- 
- .section-2, .section-3, section{ 
- display: flex;
-  flex-direction: column;
- align-items: center; 
- padding: 0 10px;
- margin-top: 10px;
- margin-bottom: 5px;
- 
- } 
+
  
  .text{ 
- margin: 10px 6%; 
+ margin: 10px; 
  font-size: 20px; 
  white-space: pre-wrap;
  width: 50%;
  
   }
   
-  
-.section-3, .section-5{
-	color: black;
-  width: 100%; 
-  align-items: center;
-}
+p b{
+	font-family: var(--fontw);
+}  
 
-.section-5{
-  display: flex;
-  width: 100%;
- 	
-} 
-
- .section-3 .title, .section-5 .title{
+ .black{
  	color: black;
- 	width: 100%;
+ 	width: 80%;
+ 	text-align: center;
  	font-size: 30px;
-  font-weight: 550; 	
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
  }
  
- .section-3 .text, .section-5 .text, .section-5 .title{
- 	color: black;
- }
- 
-.section-4{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 5px;
-} 
- .section-4 .title{
- 	color: red;
- 	font-size: 30px;
- }
- 
- .section-4 .picture{
- 	width: 800px;
-  border: 2px solid black;
-  margin-top: 20px; 
- }
 
 .section-1 .intro2{
 	font-size: 20px;	
@@ -209,9 +194,11 @@ import unittest
   text-align: center;
 }
 
+
 .word{
 	font-size: 25px;
-	font-family: Montserrat, 'Montserrat', Helvetica;
+	font-family: var(--fontw);
+	text=align: center;
 } 
 
 .list{
@@ -220,29 +207,14 @@ import unittest
 
 li{
   margin: 5px 0;
-  font-family: Montserrat-b, 'Montserrat', Helvetica;
+  font-family: var(--fontw);
   padding: 10px;      	
 }
 
-.section-6{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: left;
-	width: 100%;
-	margin-top: 40px;
-	margin-bottom: 15vh;
-}
-
-
-.section-6 .word{
-	text-align: center;
-}
 
 .red{
 	color: red;
-	font-family: Montserrat;
+	font-family: var(--fontf);
 }
 
 
@@ -266,7 +238,7 @@ li{
 	color: white;
 	display: block;
 	font-weight: 500;
-	font-family: Montserrat-b, 'Montserrat', Helvetica;
+	font-family: var(--fontf);
 	font-size: 23px;
 	cursor: pointer;
 	position: relative;
@@ -335,19 +307,14 @@ footer i{
 		
 	}
 	
-	.section-1 .max-width{
-		
-	}
-	.title{
+	
+	.title, span.title, .black{
 		margin-top: 10px;
-	  font-size: 28px;
+	  font-size: 25px;
 	}
 	
-	.section-1 .title{
-		font-size: 25px;
-	}
 	
-	.section-1 .intro{
+	 .intro{
 		font-size: 20px;
 	}
 	
@@ -360,21 +327,11 @@ footer i{
 		font-size: 15px;
 	}
 	
-	.section-3{
-		display: flex;
-		flex-direction: column;
-		padding: 20px 0;
-	}
-
-	.section-3 .title, .section-4 .title, .section-55 .title{
-		font-size: 25px;
-		padding: 10px;
-		
-	}
-
 	
-	.section-4 .picture{
- 	width: 500px;
+	
+	
+	.picture{
+ 	width: 350px;
   border: 2px solid black;
   
  }
@@ -384,14 +341,16 @@ footer i{
  	
 }	
 
-.image{
+img{
 	width: 300px;
 
 }
+
 .word{
 	font-size: 23px;
-	font-family: Montserrat;
+	font-family: var(--fontw);
 } 
+
 .list{
    width: 80%;	
 }
@@ -409,15 +368,11 @@ li{
    .title{
 		margin-top: 10px;
 	 font-size: 25px;
-	 font-family: Montserrat, 'Montserrat', Helvetica;
+	 font-family: var(--fontf);
 	}
 	
-	.section-1 .title{
-		font-size: 25px;
-		font-family: Montserrat, 'Montserrat', Helvetica;
-	}
 	
-	.section-1 .intro{
+	.intro{
 		font-size: 15px;
 		margin: 5px 0;
 	}		
@@ -426,7 +381,7 @@ li{
 		font-size: 16px;
 	}
 
-		.section-4 .picture{
+		.picture{
  	width: 300px;
   border: 2px solid black;
   
@@ -437,4 +392,6212 @@ li{
  	
 }	
 
-	} 
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}Created by Sophia Oladapo on 4/24/22.
+Copyright (c) 2022 Copyright Holder. All rights reserved.
+"""
+
+import sys
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+import unittest
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+
+:root{
+	--font: Poppins, Helvetica;
+	--fontw: Poppins-a;
+	--fontf: Montserrat, 'Montserrat', Helvetica;
+}
+/*  */
+
+@font-face{
+  font-family: Poppins;
+  src: url('../Fonts/Poppins/Poppins-Regular.ttf');
+  
+  }
+  
+   
+   @font-face{
+  font-family: Poppins;
+  src: url('Fonts/poppins/Poppins-Regular.otf');
+  
+  }
+  
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('../Fonts/Poppins/Poppins-SemiBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Poppins-a;
+  src: url('Fonts/poppins/SemiBold.otf');
+  
+  }
+   
+  @font-face{
+  font-family: Montserrat;
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+  
+  }
+
+@font-face{
+  font-family: Montserrat;
+  src: url('Fonts/Montserrat-ExtraBold.ttf');
+  
+  }
+  
+  @font-face{
+  font-family: Montserrat-b;
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+  
+  }
+
+ @font-face{
+  font-family: Montserrat-b;
+  src: url('Fonts/Montserrat-Bold.ttf');
+  
+  }
+
+
+ *{
+ 	padding:0;
+ 	margin: 0;
+ 	font-family: var(--font);
+ 	box-sizing: border-box;
+ 	font-size: 20px;
+ 	color: black;
+ 
+
+ 	
+ }
+ 
+ body{
+ 	background: white;
+ }
+ 
+ .pic{
+  width: 600px;
+ 	border: 2px solid black;
+ }
+ 
+ .picture{
+ 	width:  700px;
+ 	 border: 2px solid black;
+  margin-top: 20px; 
+  text-align: center;
+ }
+ 
+ 
+ img{
+ width: 600px;
+ 	border: 2px solid black;
+ 	margin: 10px 0;
+ }
+ 
+ 
+ .section-1{
+ 
+  width: 100%;
+ 	color: black;
+ 	padding: 10px 0;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+
+
+ 
+ .title{
+  font-family: var(--fontf);
+ 	text-align: center;
+ 	font-size: 30px;
+ 	color: red;
+ 	width: 80%;
+ 		margin-top: 10px;
+ 	margin-bottom: 15px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+ 
+ .intro{
+ 
+  font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+ }
+ 
+ .activ{
+ 	display: inline-block;
+ 	margin: 15px 0;
+ 	font-weight: 500;
+ 	font-family: Montserrat-b;
+ 	font-size: 25px;
+ 	padding: 20px;
+ 	color: white;
+ 	text-decoration: none;
+ 	background: black;
+ 	border-radius: 10px;
+ }
+ 
+
+ 
+ .text{ 
+ margin: 10px; 
+ font-size: 20px; 
+ white-space: pre-wrap;
+ width: 50%;
+ 
+  }
+  
+p b{
+	font-family: var(--fontw);
+}  
+
+ .black{
+ 	color: black;
+ 	width: 80%;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	font-family: var(--fontf);
+  font-weight: 700; 	
+  margin: 20px 0;
+ }
+ 
+
+.section-1 .intro2{
+	font-size: 20px;	
+  width: 80%;
+  color: black;
+  text-align: center;
+}
+
+
+.word{
+	font-size: 25px;
+	font-family: var(--fontw);
+	text=align: center;
+} 
+
+.list{
+   width: 50%;	
+}
+
+li{
+  margin: 5px 0;
+  font-family: var(--fontw);
+  padding: 10px;      	
+}
+
+
+.red{
+	color: red;
+	font-family: var(--fontf);
+}
+
+
+.accordion{
+
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px black;
+	overflow: hidden;
+	background: black;
+	display: block;
+	margin: 10px 20px;
+}
+
+.accordion_label,
+.accordion_content{
+   padding: 14px 20px;
+    	
+}
+
+.accordion_label{
+	color: white;
+	display: block;
+	font-weight: 500;
+	font-family: var(--fontf);
+	font-size: 23px;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.1s;
+}
+
+.accordion_label:hover{
+	background: #2E78F2;
+}
+
+
+
+.accordion_content{
+	background: white;
+	line-height: 1.6;
+	/*display: none;*/
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+.accordion-input{
+	display: none;
+}
+
+.accordion-input:checked ˜ .accordion_content{
+	display: block;
+	
+}
+
+.accordion-input:-moz-checked˜.accordion_content{
+	display: block;
+}
+
+.accordion-input:-webkit-checked˜.accordion_content{
+	display: block;
+}
+
+
+footer{
+	background: #F0F1EC;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+footer span, footer a{
+	font-size: 17px;
+	}
+
+footer span a:hover{
+	text-decoration: underline;
+}
+
+
+footer i{
+	font-size: 30px;
+}
+@media (max-width: 952px){
+	
+	.section-1{
+		margin-top: 35px;
+		
+		
+	}
+	
+	
+	.title, span.title, .black{
+		margin-top: 10px;
+	  font-size: 25px;
+	}
+	
+	
+	 .intro{
+		font-size: 20px;
+	}
+	
+	.text{
+   width: 80%;
+   font-size: 18px;
+	}
+	
+	.activ{
+		font-size: 15px;
+	}
+	
+	
+	
+	
+	.picture{
+ 	width: 350px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 300px;
+ 	
+}	
+
+img{
+	width: 300px;
+
+}
+
+.word{
+	font-size: 23px;
+	font-family: var(--fontw);
+} 
+
+.list{
+   width: 80%;	
+}
+
+li{
+	
+  margin-left: 10px;
+  padding: 10px;      	
+}
+
+	}
+	
+	@media (max-width: 500px){
+
+   .title{
+		margin-top: 10px;
+	 font-size: 25px;
+	 font-family: var(--fontf);
+	}
+	
+	
+	.intro{
+		font-size: 15px;
+		margin: 5px 0;
+	}		
+
+    .activ{
+		font-size: 16px;
+	}
+
+		.picture{
+ 	width: 300px;
+  border: 2px solid black;
+  
+ }
+
+.pic{
+	width: 250px;
+ 	
+}	
+
+	}s
